@@ -254,6 +254,9 @@ function processVideo()
   {
     if ( currentImages.length > 0 )
     {        
+let m = currentImages[index];
+console.log( m.data[0], m.data[1], m.data[2] );
+
       cv.imshow('canvas', currentImages[index] );
 
       if ( turn == 0 )
@@ -277,8 +280,6 @@ function processVideo()
   }
   else
   {
-console.log( matSrc.data[0], matSrc.data[1], matSrc.data[2], matSrc.data[3] );
-
     index = vecImage.length-1;
     turn = 0;
 
