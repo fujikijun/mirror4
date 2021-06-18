@@ -80,7 +80,7 @@ h2 {
     <div hidden><video id="video" width="640" height="480" playsinline muted autoplay></video></div>
   </div>
   <div>
-    <div><canvas id="canvas2" width="1280" height="720" ></canvas></div>
+    <div><canvas id="canvas2" width="640" height="480" ></canvas></div>
   </div>
   <div>
     <div><canvas id="canvas" width="640" height="480" ></canvas></div>
@@ -266,11 +266,11 @@ function processVideo2()
     var cEle = canvasElem2;
     var cCtx = cEle.getContext('2d');
     var vEle = videoElem;
-    cCtx.drawImage(vEle, 0, 0, 1280, 720 );  // canvasに関数実行時の動画のフレームを描画
+    cCtx.drawImage(vEle, 0, 0, 640, 480 );  // canvasに関数実行時の動画のフレームを描画
 
 
   // Loop
-  const delay = 1000 / fps - (Date.now() - begin);
+  const delay = 0;//1000 / fps - (Date.now() - begin);
   setTimeout(processVideo2, delay);
 }
 
