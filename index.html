@@ -103,6 +103,9 @@ let matGrey = null;
 let faces = null;
 let classifier = null;
 
+let vecImage = [];
+let currentImages = [];
+
 // Elements
 const videoElem  = document.getElementById('video');
 const canvasElem = document.getElementById('canvas');
@@ -162,6 +165,7 @@ function onStart() {
     audio: false
   })
     .then((_stream) => {
+
       console.log('On Start : Success');
       
       stream = videoElem.srcObject = _stream;
@@ -170,6 +174,17 @@ function onStart() {
       matSrc  = new cv.Mat(height, width, cv.CV_8UC4);  // For Video Capture
       matDst  = new cv.Mat(height/3.5, width/3.5, cv.CV_8UC4);  // For Canvas Preview
       matGrey = new cv.Mat();
+
+
+  for ( let i=0; i<30*5; i++ )
+  {
+    let mat  = new cv.Mat(height, width, cv.CV_8UC4);  // For Video Capture
+
+    vecImage[i] = mat;
+    currentImages[i] = ma;
+  }
+
+
       faces = new cv.RectVector();
       classifier = new cv.CascadeClassifier();
       // Load Pre-Trained Classifiers
