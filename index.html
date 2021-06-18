@@ -223,6 +223,8 @@ function onStop()
   stopButtonElem.disabled  = true;
 }
 
+let count = 0;
+
 /** Process Video */
 function processVideo() 
 {
@@ -277,7 +279,9 @@ function processVideo()
   }
   else
   {
-console.log("-----");
+    if( count > 2 )
+    {
+console.log("check");
     index = vecImage.length-1;
     turn = 0;
 
@@ -289,6 +293,11 @@ console.log("-----");
     if ( index_max < vecImage.length )
     {
       index_max++;
+    }
+    }
+    else
+    {
+       count++;
     }
   }
 
