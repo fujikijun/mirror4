@@ -254,7 +254,6 @@ function processVideo()
   {
     if ( currentImages.length > 0 )
     {        
-console.log("test");
       cv.imshow('canvas', currentImages[index] );
 
       if ( turn == 0 )
@@ -278,6 +277,7 @@ console.log("test");
   }
   else
   {
+console.log("-----");
     index = vecImage.length-1;
     turn = 0;
 
