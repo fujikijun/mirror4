@@ -254,6 +254,7 @@ function processVideo()
   {
     if ( currentImages.length > 0 )
     {        
+console.log("test");
       cv.imshow('canvas', currentImages[index] );
 
       if ( turn == 0 )
@@ -274,7 +275,8 @@ function processVideo()
         }
       }
     }
-  } else
+  }
+  else
   {
     index = vecImage.length-1;
     turn = 0;
@@ -282,7 +284,6 @@ function processVideo()
     nextImage = currentImages[0];
     currentImages.shift();
     matSrc.copyTo( nextImage );
-
     currentImages.push( nextImage );
 
     if ( index_max < vecImage.length )
