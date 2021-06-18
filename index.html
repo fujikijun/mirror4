@@ -77,9 +77,6 @@ h2 {
 
 <div class="preview">
   <div>
-    <div><canvas id="canvas2" width="640" height="480" ></canvas></div>
-  </div>
-  <div>
     <div><canvas id="canvas" width="640" height="480" ></canvas></div>
   </div>
   <div>
@@ -109,7 +106,6 @@ let classifier = null;
 // Elements
 const videoElem  = document.getElementById('video');
 const canvasElem = document.getElementById('canvas');
-const canvasElem2 = document.getElementById('canvas2');
 const startButtonElem = document.getElementById('start');
 const stopButtonElem  = document.getElementById('stop');
 const statusElem = document.getElementById('status');
@@ -247,21 +243,6 @@ ctx.closePath()
   // Loop
   const delay = 1000 / fps - (Date.now() - begin);
   setTimeout(processVideo, delay);
-}
-
-function processVideo2() 
-{  
-  const begin = Date.now();
-
-    var cEle = canvasElem2;
-    var cCtx = cEle.getContext('2d');
-    var vEle = videoElem;
-    cCtx.drawImage(vEle, 0, 0, 640, 480 );  // canvasに関数実行時の動画のフレームを描画
-
-
-  // Loop
-  const delay = 1000 / fps - (Date.now() - begin);
-  setTimeout(processVideo2, delay);
 }
 
 </script>
