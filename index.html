@@ -77,13 +77,13 @@ h2 {
 
 <div class="preview">
   <div>
-    <div hidden><video id="video" width="640" height="480" playsinline muted autoplay></video></div>
-  </div>
-  <div>
     <div><canvas id="canvas2" width="640" height="480" ></canvas></div>
   </div>
   <div>
     <div><canvas id="canvas" width="640" height="480" ></canvas></div>
+  </div>
+  <div>
+    <div hidden><video id="video" width="640" height="480" playsinline muted autoplay></video></div>
   </div>
 </div>
 
@@ -223,9 +223,9 @@ function processVideo()
     return;
   }
   
-  const begin = Date.now();/*
+  const begin = Date.now();
   videoCapture.read(matSrc);  // Capture Video Image To Mat Src
-
+/*
   cv.resize( matSrc, matDst, matDst.size() ); 
 
   cv.cvtColor(matDst, matGrey, cv.COLOR_RGBA2GRAY, 0);  // Get Grey Image
