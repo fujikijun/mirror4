@@ -255,6 +255,8 @@ function processVideo()
     if ( currentImages.length > 0 )
     {        
 let m = currentImages[index];
+if( !( m.data[0]==0 && m.data[1]==0 && m.data[2]==0 ) )
+{
 console.log( m.data[0], m.data[1], m.data[2] );
 
       cv.imshow('canvas', currentImages[index] );
@@ -276,6 +278,7 @@ console.log( m.data[0], m.data[1], m.data[2] );
           turn = 0;
         }
       }
+}
     }
   }
   else
