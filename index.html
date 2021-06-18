@@ -279,7 +279,7 @@ function processVideo()
     turn = 0;
 
     nextImage = currentImages[0];
-    delete currentImages[0];
+    currentImages.shift();
     matSrc.copyTo( nextImage );
 
     currentImages.push( nextImage );
