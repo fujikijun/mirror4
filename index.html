@@ -257,7 +257,6 @@ function processVideo()
 let m = currentImages[index];
 if( !( m.data[0]==0 && m.data[1]==0 && m.data[2]==0 ) )
 {
-console.log( m.data[0], m.data[1], m.data[2] );
 
       cv.imshow('canvas', currentImages[index] );
 
@@ -283,6 +282,8 @@ console.log( m.data[0], m.data[1], m.data[2] );
   }
   else
   {
+if( !( m.data[0]==0 && m.data[1]==0 && m.data[2]==0 ) )
+{
     index = vecImage.length-1;
     turn = 0;
 
@@ -295,6 +296,7 @@ console.log( m.data[0], m.data[1], m.data[2] );
     {
       index_max++;
     }
+}
   }
 
 //---------------------------------------------------------------------
