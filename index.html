@@ -77,7 +77,10 @@ h2 {
 
 <div class="preview">
   <div>
-    <div><video id="video" width="640" height="480" playsinline muted autoplay></video></div>
+    <div hidden><video id="video" width="640" height="480" playsinline muted autoplay></video></div>
+  </div>
+  <div>
+    <div><canvas id="canvas2" width="1280" height="720" ></canvas></div>
   </div>
   <div>
     <div><canvas id="canvas" width="640" height="480" ></canvas></div>
@@ -240,7 +243,7 @@ cv.resize( matSrc, matDst, matDst.size() );
 
   if( faces.size() > 0 )
   {
-var ctx = videoElem.getContext("2d");
+var ctx = canvasElem.getContext("2d");
 ctx.beginPath();
 ctx.rect(20, 40, 50, 50);
 ctx.fillStyle = "#FF0000";
