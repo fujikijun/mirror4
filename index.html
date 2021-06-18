@@ -223,7 +223,7 @@ function processVideo()
     return;
   }
   
-  const begin = Date.now();
+  const begin = Date.now();/*
   videoCapture.read(matSrc);  // Capture Video Image To Mat Src
 
   cv.resize( matSrc, matDst, matDst.size() ); 
@@ -242,7 +242,11 @@ ctx.fillStyle = "#FF0000";
 ctx.fill();
 ctx.closePath()
   }
-  
+*/  
+
+
+  cv.imshow('canvas', matSrc);  // Set Element ID
+
   // Loop
   const delay = 1000 / fps - (Date.now() - begin);
   setTimeout(processVideo, delay);
@@ -251,8 +255,6 @@ ctx.closePath()
 function processVideo2() 
 {  
   const begin = Date.now();
-
-  videoCapture.read(matSrc); 
 
     var cEle = canvasElem2;
     var cCtx = cEle.getContext('2d');
