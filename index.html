@@ -251,7 +251,7 @@ function processVideo()
 //---------------------------------------------------------------------
   if ( faces.size() == 0 )
   {
-    if ( currentImages.size() > 0 )
+    if ( currentImages.length > 0 )
     {        
       cv.imshow('canvas', currentImages[index] );
 
@@ -275,7 +275,7 @@ function processVideo()
     }
   } else
   {
-    index = vecImage.size()-1;
+    index = vecImage.length-1;
     turn = 0;
 
     nextImage = currentImages[0];
@@ -284,7 +284,7 @@ function processVideo()
 
     currentImages.push( nextImage );
 
-    if ( index_max < vecImage.size() )
+    if ( index_max < vecImage.length )
     {
       index_max++;
     }
