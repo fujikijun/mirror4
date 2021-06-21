@@ -89,6 +89,8 @@ h2 {
 // https://docs.opencv.org/3.4.0/df/d6c/tutorial_js_face_detection_camera.html
 
 // Video Settings
+const widthC  = 720;
+const heightC = 480;
 const width  = 720;
 const height = 480;
 const fps = 30;
@@ -143,8 +145,11 @@ function onReady()
   console.log('On Ready');
   
   // Set Element Size
-  videoElem.width  = canvasElem.width  = width;
-  videoElem.height = canvasElem.height = height;
+  canvasElem.width  = widthC;
+  canvasElem.height = heightC;
+  videoElem.width  = width;
+  videoElem.height = height;
+
   // Start Video Capture
   videoCapture = new cv.VideoCapture(videoElem);
   // Load XML File With XHR
