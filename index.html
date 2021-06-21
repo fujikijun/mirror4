@@ -120,6 +120,8 @@ const statusElem = document.getElementById('status');
 // https://docs.opencv.org/3.4.0/haarcascade_frontalface_default.xml
 const faceCascadeFile = './haarcascade_frontalface_default.xml';
 
+var music = new Audio();
+
 // ================================================================================
 
 /** On OpenCV.js Loaded */
@@ -129,6 +131,10 @@ function onCvLoaded()
   
   cv.onRuntimeInitialized = onReady;  // Not Working...
   statusElem.innerText = 'On OpenCV.js Loaded';
+
+    music.preload = "auto";
+    music.src = "./data/crow7.mp3";
+    music.load();
 }
 
 /** On Ready */
@@ -224,6 +230,9 @@ function onStop()
 }
 
 /** Process Video */
+
+let count = 0;
+
 function processVideo() 
 {
   if(!isStreaming) {
@@ -236,7 +245,13 @@ function processVideo()
     classifier.delete();
     return;
   }
-  
+
+  count++;
+ if( count == 30 )
+ {
+    music.play();
+ }  
+
   const begin = Date.now();
   videoCapture.read(matSrc);  // Capture Video Image To Mat Src
 
