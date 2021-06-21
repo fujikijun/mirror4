@@ -240,7 +240,7 @@ function processVideo()
   const begin = Date.now();
   videoCapture.read(matSrc);  // Capture Video Image To Mat Src
 
-  cv.resize( matSrc, matDst, matDst.size() ); 
+  //cv.resize( matSrc, matDst, matDst.size() ); 
 
   cv.cvtColor(matDst, matGrey, cv.COLOR_RGBA2GRAY, 0);  // Get Grey Image
 
