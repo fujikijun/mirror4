@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=640, initial-scale=1">
+    <meta name="viewport" content="width=720, initial-scale=1">
     <!-- Google Search Console -->
     <meta name="google-site-verification" content="ls7kuvIKSqVa_dcixqKvFwl393swvYMkHCkG-xtlCj0">
     <title>mirror</title>
@@ -77,10 +77,10 @@ h2 {
 
 <div class="preview">
   <div>
-    <div><canvas id="canvas" width="640" height="480" ></canvas></div>
+    <div><canvas id="canvas" width="720" height="480" ></canvas></div>
   </div>
   <div>
-    <div hidden><video id="video" width="640" height="480" playsinline muted autoplay></video></div>
+    <div hidden><video id="video" width="720" height="480" playsinline muted autoplay></video></div>
   </div>
 </div>
 
@@ -89,7 +89,7 @@ h2 {
 // https://docs.opencv.org/3.4.0/df/d6c/tutorial_js_face_detection_camera.html
 
 // Video Settings
-const width  = 640;
+const width  = 720;
 const height = 480;
 const fps = 30;
 
@@ -246,6 +246,7 @@ function processVideo()
 
   classifier.detectMultiScale(matGrey, faces, 1.1, 3, 0);  // Detect Faces
 
+  cv.flip( matSrc, matSrc, 0 );
   cv.imshow('canvas', matSrc);  // Set Element ID
 
 //---------------------------------------------------------------------
