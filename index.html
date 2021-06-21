@@ -256,13 +256,13 @@ function processVideo()
   const begin = Date.now();
   videoCapture.read(matSrc);  // Capture Video Image To Mat Src
 
-  //cv.resize( matSrc, matDst, matDst.size() ); 
+  cv.resize( matSrc, matDst, matDst.size() ); 
 
   cv.cvtColor(matDst, matGrey, cv.COLOR_RGBA2GRAY, 0);  // Get Grey Image
 
   classifier.detectMultiScale(matGrey, faces, 1.1, 3, 0);  // Detect Faces
 
-  cv.flip( matSrc, matSrc, 1 );
+  //cv.flip( matSrc, matSrc, 1 );
   cv.imshow('canvas', matSrc);  // Set Element ID
 
 //---------------------------------------------------------------------
