@@ -118,6 +118,7 @@ let oldState = 0;
 let startActionTime;
 let startActionTimeInterval = 100*1;
 
+let slowcount = 0;
 
 // Elements
 const videoElem  = document.getElementById('video');
@@ -289,7 +290,7 @@ startActionTime = Date.now();
   if( Date.now()-startActionTime >= startActionTimeInterval )
   {
 let index2 = parseInt(index*0.5)*2;
-      cv.imshow('canvas', currentImages[index] );
+      cv.imshow('canvas', currentImages[index2] );
 
       if ( turn == 0 )
       {
@@ -318,6 +319,7 @@ oldState = 1;
 let m = matSrc;
 if( !( m.data[0]==0 && m.data[1]==0 && m.data[2]==0 ) )
 {
+    slowcount = 0;
     index = vecImage.length-1;
     turn = 0;
 
