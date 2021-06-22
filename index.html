@@ -288,7 +288,7 @@ startActionTime = Date.now();
 }
   if( Date.now()-startActionTime >= startActionTimeInterval )
   {
-let index2 = floor(index*0.5)*2;
+let index2 = parseInt(index*0.5)*2;
       cv.imshow('canvas', currentImages[index] );
 
       if ( turn == 0 )
