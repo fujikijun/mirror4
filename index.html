@@ -289,9 +289,13 @@ startActionTime = Date.now();
 }
   if( Date.now()-startActionTime >= startActionTimeInterval )
   {
-let index2 = parseInt(index*0.5)*2;
-      cv.imshow('canvas', currentImages[index2] );
+//let index2 = parseInt(index*0.5)*2;
+      cv.imshow('canvas', currentImages[index] );
+      slowcount++;
 
+if( slowcount > 3 )
+{
+slowcount = 0;
       if ( turn == 0 )
       {
         index--;
@@ -309,6 +313,7 @@ let index2 = parseInt(index*0.5)*2;
           turn = 0;
         }
       }
+}
   }
 oldState = 1;
 }
