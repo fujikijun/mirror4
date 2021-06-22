@@ -274,10 +274,12 @@ function processVideo()
   cv.flip( matSrc, matSrc, 1 );
   cv.imshow('canvas', matSrc);  // Set Element ID
 
+console.log( Date.now(),startTime,startTimeInterval  );
+
 //---------------------------------------------------------------------
   if( Date.now()-startTime >= startTimeInterval )
 {
-console.log( "ok" );
+
 
   if ( faces.size() == 0 )
   {
